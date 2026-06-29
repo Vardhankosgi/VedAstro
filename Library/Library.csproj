@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<AssemblyName>VedAstro.Library</AssemblyName>
+		<RootNamespace>VedAstro.Library</RootNamespace>
+		<Nullable>disable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<LangVersion>preview</LangVersion>
+		<!-- Suppress non-critical warnings to keep build output clean -->
+		<NoWarn>CS8632;CS1998;CS4014;CS0168;CS0219;CS0162;CS8073;CS0472;CS0675;CS8321;CA1416</NoWarn>
+		<Title>VedAstro</Title>
+		<!--The package name or identifier.-->
+		<PackageId>VedAstro.Library</PackageId>
+		<!--NuGet package version.-->
+		<Version>1.2.0</Version>
+		<!--A comma-separated list of package authors, often using the individual's or an organization's "pretty name."-->
+		<Authors>VedAstro</Authors>
+		<!--A description of the package.-->
+		<Description>Powerful open-source vedic astrology calculator library</Description>
+		<!--Copyright details for the package.-->
+		<Copyright>Copyright (c) 2014-2023 VedAstro</Copyright>
+		<!--A URL for the project homepage.-->
+		<PackageProjectUrl>https://vedastro.org/</PackageProjectUrl>
+		<!--Path to the package icon image file.-->
+		<PackageIcon>icon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/VedAstro/VedAstro</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<!--A space-delimited list of tags and keywords that describe the package. Tags are used when searching for packages.-->
+		<PackageTags>astrology vedic calculator muhurtha dasa bhukti antaram horoscope match kuta planet longitudes zodiac sign constellation</PackageTags>
+		<!--A description of the changes made in this release of the package.-->
+		<PackageReleaseNotes>minor non-breaking fixes</PackageReleaseNotes>
+		<Company>VedAstro</Company>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="calculators\**" />
+	  <EmbeddedResource Remove="calculators\**" />
+	  <None Remove="calculators\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" PackagePath="\" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
+		<PackageReference Include="Azure.AI.OpenAI" Version="1.0.0-beta.17" />
+		<PackageReference Include="Azure.Data.Tables" Version="12.8.1" />
+		<PackageReference Include="EPPlus" Version="7.0.0-beta1" />
+		<PackageReference Include="HtmlAgilityPack" Version="1.11.53" />
+		<PackageReference Include="Microsoft.Azure.Functions.Worker.Core" Version="1.17.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+		<PackageReference Include="Microsoft.JSInterop" Version="7.0.13" />
+		<PackageReference Include="Mime-Detective" Version="23.6.1" />
+		<PackageReference Include="ScottPlot" Version="4.1.67" />
+		<PackageReference Include="Svg" Version="3.4.4" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="SwissEphNet" Version="2.8.0.2" />
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.16.0" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Logic\GIFConverter\AnimatedGifEncoder.cs">
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Logic\GIFConverter\GifDecoder.cs">
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Logic\GIFConverter\LZWEncoder.cs">
+	    <SubType>Code</SubType>
+	  </Compile>
+	  <Compile Update="Logic\GIFConverter\NeuQuant.cs">
+	    <SubType>Code</SubType>
+	  </Compile>
+	</ItemGroup>
+
+</Project>
