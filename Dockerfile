@@ -19,5 +19,8 @@ RUN dotnet publish "API.csproj" -c Release -o /app/publish /p:UseAppHost=false
 FROM base AS final
 WORKDIR /home/site/wwwroot
 COPY --from=publish /app/publish .
-ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
+ENV PORT=80 \
+    ASPNETCORE_HTTP_PORTS=80 \
+    ASPNETCORE_URLS=http://+:80 \
+    AzureWebJobsScriptRoot=/home/site/wwwroot \
     AzureFunctionsJobHost__Logging__Console__IsEnabled=true
