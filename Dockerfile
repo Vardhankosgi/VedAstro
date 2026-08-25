@@ -10,6 +10,7 @@ RUN dotnet restore "API/API.csproj"
 COPY . .
 
 WORKDIR "/src/API"
+RUN test -f local.settings.json || cp local.settings.sample.json local.settings.json || echo '{"IsEncrypted":false,"Values":{}}' > local.settings.json
 RUN dotnet build "API.csproj" -c Release -o /app/build
 
 FROM build AS publish

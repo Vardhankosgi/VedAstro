@@ -1,24 +1,7 @@
-**/.classpath
-**/.dockerignore
-**/.git
-**/.gitignore
-**/.project
-**/.settings
-**/.toolstarget
-**/.vs
-**/.vscode
-**/*.*proj.user
-**/*.dbmdl
-**/*.jfm
-**/azds.yaml
-**/bin
-**/obj
-**/node_modules
-**/npm-debug.log
-**/secrets.dev.yaml
-**/values.dev.yaml
-**/azurite_data
-**/__blobstorage__
-**/__queuestorage__
-*.zip
-*.log
+**/.classpath **/.dockerignore **/.git **/.gitignore **/.project **/.settings **/.toolstarget **/.vs **/.vscode **
+/*.*proj.user
+**/
+*.dbmdl **
+/*.jfm 
+**/
+azds.yaml **/bin **/obj **/node_modules **/npm-debug.log **/secrets.dev.yaml **/values.dev.yaml **/azurite_data **/__blobstorage__ **/__queuestorage__ *.zip *.log
