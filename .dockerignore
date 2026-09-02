@@ -1,3 +1,4 @@
+# Ignore IDE and build artifacts
 **/.classpath
 **/.dockerignore
 **/.git
@@ -7,10 +8,10 @@
 **/.toolstarget
 **/.vs
 **/.vscode
-**/*.*proj.user
-**/*.dbmdl
-**/*.jfm
-**/azds.yaml
+**/*.user
+*.dbmdl
+*.jfm
+azds.yaml
 **/bin
 **/obj
 **/node_modules
@@ -22,3 +23,27 @@
 **/__queuestorage__
 *.zip
 *.log
+
+# Exclude non-essential top-level directories
+Android/
+Desktop/
+Website/
+Console/
+APITester/
+ChatAPI/
+DataProcessor/
+HuggingFace/
+StaticTableGenerator/
+ViewComponents/
+LibraryTests/
+LocalAstroAPI/
+Others/
+vedastro-client/
+
+# Do NOT ignore these (needed for build)
+!API/
+!Library/
+!Dockerfile
+!start.sh
+!*.csproj
+!*.sln
