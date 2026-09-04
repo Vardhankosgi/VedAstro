@@ -66,7 +66,8 @@ ENV PORT=80 \
     OpenAPICallDelayMs=0 \
     BING_IMAGE_SEARCH=local-dev \
     EnableCache=false \
-    SLACK_EMAIL_WEBHOOK=local-dev
+    SLACK_EMAIL_WEBHOOK=local-dev \
+    AzureFunctionsJobHost__extensions__http__cors__allowedOrigins__0="*"
 
 # Use the custom startup script as the container entrypoint
 CMD ["/opt/startup/vedastro-start.sh"]
